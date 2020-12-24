@@ -1,3 +1,5 @@
+-- vim: ts=4 sw=4 et:
+
 vim.cmd [[packadd packer.nvim]]
 
 vim.cmd [[autocmd BufWritePost plugins.lua PackerCompile]]
@@ -8,6 +10,7 @@ require('packer').startup(function()
     use {
         'gruvbox-community/gruvbox',
         config = function()
+            vim.o.background = 'dark'
             vim.g.gruvbox_italics = true
             vim.g.gruvbox_contrast_dark = 'hard'
             vim.cmd('colorscheme gruvbox')
@@ -23,8 +26,6 @@ require('packer').startup(function()
         end,
         requires = {'kyazdani42/nvim-web-devicons', opt = true}
     }
-
-    use {'glepnir/indent-guides.nvim'}
 
     use {
         'kyazdani42/nvim-tree.lua',
@@ -43,7 +44,6 @@ require('packer').startup(function()
 
     use {
         'nvim-treesitter/nvim-treesitter',
-        -- event = 'BufRead *',
         requires = {
             {'nvim-treesitter/nvim-treesitter-refactor', after = 'nvim-treesitter'},
             {'nvim-treesitter/nvim-treesitter-textobjects', after = 'nvim-treesitter'}
@@ -69,7 +69,6 @@ require('packer').startup(function()
 
     use {
         'nvim-lua/completion-nvim',
-        -- event = 'InsertEnter *',
         requires = {
             'hrsh7th/vim-vsnip',
             'hrsh7th/vim-vsnip-integ',

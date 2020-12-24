@@ -1,3 +1,5 @@
+-- vim: ts=4 sw=4 et:
+
 local o   = vim.o
 local g   = vim.g
 local wo  = vim.wo
@@ -14,7 +16,7 @@ o.wildmenu      = true          -- Command line completion mode
 o.wildmode      = 'full'        -- Command line completion mode
 o.hlsearch      = true
 
-o.listchars     = [[tab:→\ ,space:·,eol:¶,trail:·,extends:↷,precedes:↶]]
+o.listchars     = [[tab:→ ,space:·,eol:¶,trail:·,extends:↷,precedes:↶]]
 
 o.clipboard     = 'unnamedplus' -- Use system clipboard
 

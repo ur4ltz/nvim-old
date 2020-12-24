@@ -13,15 +13,15 @@ let g:startify_bookmarks = [
       \ {'v': '~/.vimrc'},
       \ {'z': '~/.zshrc'},
       \ {'a': '~/.config/alacritty/alacritty.yml'},
-      \ {'i': '~/.config/nvim/init.vim'}
+      \ {'i': '~/.config/nvim/lua/plugins.lua'}
       \ ]
 
 let g:startify_list = [
       \ ['   Bookmarks'], 'bookmarks',
-      \ ['   Sessions'], 'sessions',
-      \ ['   Files'], 'files',
+      \ ['   Sessions'],  'sessions',
+      \ ['   Files'],     'files',
       \ ['   Directory'], 'dir',
-      \ ['   Commands'], 'commands']
+      \ ['   Commands'],  'commands']
 
 if has('nvim')
   let g:startify_ascii = [

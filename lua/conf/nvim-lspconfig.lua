@@ -40,7 +40,7 @@ local servers = {
                 diagnostics = {
                     enable = true,
                     globals = {'vim', 'map', 'range', 'reduce', 'tail', 'nth', 'use'},
-                    disable = {'unused-local', 'unused-vararg', 'lowercase-global'}
+                    -- disable = {'unused-local', 'unused-vararg', 'lowercase-global'}
                 },
                 workspace = {
                     library = get_lua_runtime()
