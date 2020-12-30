@@ -38,6 +38,7 @@ local servers = {
                     keywordSnippet = 'Disable'
                 },
                 diagnostics = {
+                    workspaceDelay = -1,
                     enable = true,
                     globals = {'vim', 'map', 'range', 'reduce', 'tail', 'nth', 'use'},
                     -- disable = {'unused-local', 'unused-vararg', 'lowercase-global'}
