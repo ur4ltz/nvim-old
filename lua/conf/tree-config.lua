@@ -1,28 +1,28 @@
 local M = {}
 
 function M.setup()
-  vim.g.lua_tree_side       = 'left'
-  vim.g.lua_tree_width      = 60
+  vim.g.nvim_tree_side       = 'left'
+  vim.g.nvim_tree_width      = 60
 
-  vim.g.lua_tree_auto_open  = 0
-  vim.g.lua_tree_auto_close = 1
-  vim.g.lua_tree_follow     = 1
-  vim.g.lua_tree_tab_open   = 1
+  vim.g.nvim_tree_auto_open  = 0
+  vim.g.nvim_tree_auto_close = 1
+  vim.g.nvim_tree_follow     = 1
+  vim.g.nvim_tree_tab_open   = 1
 
-  vim.g.lua_tree_ignore     = {
+  vim.g.nvim_tree_ignore     = {
     '.git',
     '.hg',
     '.svn',
     'node_modules'
   }
 
-  vim.g.lua_tree_show_icons = {
+  vim.g.nvim_tree_show_icons = {
     git     = 1,
     folders = 1,
     files   = 1
   }
 
-  vim.g.lua_tree_icons = {
+  vim.g.nvim_tree_icons = {
     default     = '',
     symlink     = '',
     git= {
@@ -38,24 +38,24 @@ function M.setup()
     }
   }
 
-  vim.g.lua_tree_bindings = {
+  vim.g.nvim_tree_bindings = {
     preview = { '<C-p>', '<C-b>', '<Tab>' }
   }
 
-  vim.api.nvim_set_keymap('n', '<C-n>', ':LuaTreeToggle<CR>', {
+  vim.api.nvim_set_keymap('n', '<C-n>', ':NvimTreeToggle<CR>', {
       noremap = true,
       silent = true
     })
 
-  vim.api.nvim_set_keymap('n', '<leader>r', ':LuaTreeRefresh<CR>', {
+  vim.api.nvim_set_keymap('n', '<leader>r', ':NvimTreeRefresh<CR>', {
       noremap = true,
       silent = true
     })
 
   vim.api.nvim_exec([[
-  augroup LuaTreeOverride
+  augroup NvimTreeOverride
     au!
-    au FileType LuaTree setlocal nowrap
+    au FileType NvimTree setlocal nowrap
   augroup END
   ]], '')
 
