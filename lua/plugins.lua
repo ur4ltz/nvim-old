@@ -60,6 +60,7 @@ require('packer').startup(function()
 --            'nvim-lua/lsp-status.nvim'
 --        },
     }
+
     use {
         'RishabhRD/nvim-lsputils',
         requires = {
@@ -75,19 +76,18 @@ require('packer').startup(function()
             'steelsojka/completion-buffers',
             'nvim-treesitter/completion-treesitter'
         },
-        config = "require('conf.completion-nvim').setup()",
-        -- config = "require('conf.completion-nvim').config()"
+        setup = "require('conf.completion-nvim').setup()",
+        config = "require('conf.completion-nvim').config()"
     }
 
     use {
         'nvim-telescope/telescope.nvim',
-        config = function()
-            require('conf.telescope')
-        end,
         requires = {
             'nvim-lua/popup.nvim',
             'nvim-lua/plenary.nvim'
         },
+        setup = "require('conf.telescope').setup()",
+        config = "require('conf.telescope').config()"
     }
 
     use {
