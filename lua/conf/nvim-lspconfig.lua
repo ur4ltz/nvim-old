@@ -1,7 +1,7 @@
 -- vim: ts=4 sw=4 et:
 
 local api = vim.api
-local lsp = require('lspconfig')
+local lspconfig = require('lspconfig')
 
 -- local M = {}
 
@@ -22,12 +22,16 @@ local function get_lua_runtime()
     return result;
 end
 
+local system_name = 'Linux'
+local sumneko_root_path = vim.fn.expand('$HOME/github/lua-language-server')
+local sumneko_binary = sumneko_root_path.."/bin/"..system_name.."/lua-language-server"
 local servers = {
     bashls = {},
     ccls = {},
     vimls = {},
     pyls = {},
     sumneko_lua = {
+        cmd = {sumneko_binary, '-E', sumneko_root_path .. '/main.lua'},
         settings = {
             Lua = {
                 runtime = {
@@ -53,5 +57,5 @@ local servers = {
 
 for server, config in pairs(servers) do
     config.on_attach = custom_attach
-    lsp[server].setup(config)
+    lspconfig[server].setup(config)
 end
