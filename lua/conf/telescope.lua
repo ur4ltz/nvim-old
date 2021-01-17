@@ -2,6 +2,7 @@ M = {}
 
 function M.setup()
     local opts = {noremap = true, silent = true}
+    vim.api.nvim_set_keymap('n', '<Space>b', "<cmd>lua require('telescope.builtin').buffers{shorten_path = true}<CR>", opts)
     vim.api.nvim_set_keymap('n', '<Space>h', "<cmd>lua require('telescope.builtin').help_tags{}<CR>", opts)
 end
 
