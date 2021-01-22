@@ -41,6 +41,11 @@ require('packer').startup(function()
     }
 
     use {
+        'glepnir/indent-guides.nvim',
+        config = "require('conf.indent-guides')"
+    }
+
+    use {
         'glepnir/galaxyline.nvim',
         branch = 'main',
         config = function()
