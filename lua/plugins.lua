@@ -76,7 +76,8 @@ require('packer').startup(function()
             {'nvim-treesitter/nvim-treesitter-refactor', after = 'nvim-treesitter'},
             {'nvim-treesitter/nvim-treesitter-textobjects', after = 'nvim-treesitter'}
         },
-        config = "require('conf.nvim-treesitter').config()"
+        config = "require('conf.nvim-treesitter').config()",
+        run = function() vim.cmd [[TSUpdate]] end
     }
 
     use {

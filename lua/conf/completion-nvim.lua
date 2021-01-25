@@ -12,7 +12,10 @@ function M.setup()
     vim.g.completion_enable_snippet       = 'vim-vsnip'
     vim.g.completion_auto_change_source   = 1
 
+    vim.g.completion_matching_strategy_list = {'exact', 'substring', 'fuzzy'}
     vim.g.completion_matching_ignore_case = 1
+
+    vim.g.completion_trigger_keyword_length = 2
 
     vim.g.completion_chain_complete_list = {
         default = {
