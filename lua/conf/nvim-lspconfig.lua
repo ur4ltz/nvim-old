@@ -2,6 +2,7 @@
 
 local api = vim.api
 local lspconfig = require('lspconfig')
+local sign_define = vim.fn.sign_define
 
 -- local M = {}
 
@@ -9,6 +10,39 @@ local custom_attach = function(client)
     require('completion').on_attach(client)
     -- require('diagnostic').on_attach(client)
 end
+
+vim.lsp.handlers["textDocument/publishDiagnostics"] =
+    vim.lsp.with(
+    vim.lsp.diagnostic.on_publish_diagnostics, {
+        underline = true,
+        virtual_text = {
+            spacing = 4,
+            --prefix = '~'
+        },
+        signs = true,
+        update_in_insert = false,
+    }
+)
+
+sign_define(
+    "LspDiagnosticsSignError",
+    {text = '"', texthl = 'LspDiagnosticsError'}
+)
+
+sign_define(
+  "LspDiagnosticsSignWarning",
+  {text = "", texthl = "LspDiagnosticsWarning"}
+)
+
+sign_define(
+  "LspDiagnosticsSignInformation",
+  {text = "", texthl = "LspDiagnosticsInformation"}
+)
+
+sign_define(
+  "LspDiagnosticsSignHint",
+  {text = "", texthl = "LspDiagnosticsHint"}
+)
 
 local function get_lua_runtime()
     local result = {}
@@ -42,9 +76,9 @@ local servers = {
                     keywordSnippet = 'Disable'
                 },
                 diagnostics = {
-                    workspaceDelay = -1,
+                    -- workspaceDelay = -1,
                     enable = true,
-                    globals = {'vim', 'map', 'range', 'reduce', 'tail', 'nth', 'use'},
+                    globals = {'vim', 'use'},
                     -- disable = {'unused-local', 'unused-vararg', 'lowercase-global'}
                 },
                 workspace = {
