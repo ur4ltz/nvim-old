@@ -15,7 +15,7 @@ function M.setup()
     vim.g.completion_matching_strategy_list = {'exact', 'substring', 'fuzzy'}
     vim.g.completion_matching_ignore_case = 1
 
-    vim.g.completion_trigger_keyword_length = 2
+    vim.g.completion_trigger_keyword_length = 1
 
     vim.g.completion_chain_complete_list = {
         default = {
