@@ -96,7 +96,7 @@ require('packer').startup(function()
             {'nvim-treesitter/nvim-treesitter-textobjects', after = 'nvim-treesitter'}
         },
         config = "require('conf.nvim-treesitter').config()",
-        run = function() vim.cmd [[TSUpdate]] end
+        run = ':TSUpdate'
     }
 
     use {
