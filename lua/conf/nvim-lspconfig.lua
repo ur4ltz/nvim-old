@@ -64,6 +64,7 @@ local servers = {
     ccls = {},
     vimls = {},
     pyls = {},
+    gopls = {},
     sumneko_lua = {
         cmd = {sumneko_binary, '-E', sumneko_root_path .. '/main.lua'},
         settings = {
