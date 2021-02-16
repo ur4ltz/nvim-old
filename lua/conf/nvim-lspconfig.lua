@@ -26,22 +26,22 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] =
 
 sign_define(
     "LspDiagnosticsSignError",
-    {text = '"', texthl = 'LspDiagnosticsError'}
+    {text = ' ', texthl = 'LspDiagnosticsError'}
 )
 
 sign_define(
-  "LspDiagnosticsSignWarning",
-  {text = "", texthl = "LspDiagnosticsWarning"}
+    "LspDiagnosticsSignWarning",
+    {text = ' ', texthl = 'LspDiagnosticsWarning'}
 )
 
 sign_define(
-  "LspDiagnosticsSignInformation",
-  {text = "", texthl = "LspDiagnosticsInformation"}
+    "LspDiagnosticsSignInformation",
+    {text = ' ', texthl = 'LspDiagnosticsInformation'}
 )
 
 sign_define(
-  "LspDiagnosticsSignHint",
-  {text = "", texthl = "LspDiagnosticsHint"}
+    "LspDiagnosticsSignHint",
+    {text = ' ', texthl = 'LspDiagnosticsHint'}
 )
 
 local function get_lua_runtime()
