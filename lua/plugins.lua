@@ -50,12 +50,14 @@ require('packer').startup(function()
         requires = {'kyazdani42/nvim-web-devicons', opt = true},
         config = function()
             local lualine = require('lualine')
-            --lualine.theme = 'gruvbox'
-            lualine.theme = 'powerline'
+            lualine.options = {
+                theme = 'powerline',
+                icons_enabled = true,
+            }
             lualine.separator = '|'
             lualine.sections = {
                 lualine_a = {'mode'},
-                lualine_b = {'branch', 'signify'},
+                lualine_b = {'branch', 'diff'},
                 lualine_c = {'filename'},
                 lualine_x = {'encoding', 'fileformat', 'filetype'},
                 lualine_y = {'progress'},
@@ -136,6 +138,10 @@ require('packer').startup(function()
         },
         setup = "require('conf.telescope').setup()",
         config = "require('conf.telescope').config()"
+    }
+
+    use {
+        'liuchengxu/vista.vim'
     }
 
     use {
