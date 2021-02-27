@@ -33,18 +33,18 @@ function M.setup()
                 {complete_items = {'buffer'}}
             }
         },
---        lua = {
---            default = {
---                {complete_items = {'lsp', 'ts', 'snippet'}},
---                {complete_items = {'buffer'}},
---                {mode = '<C-p>'},
---                {mode = '<C-n>'}
---            },
---            comment = {},
---            string = {
---                {complete_items = {'path'}, triggered_only = {"/"}}
---            }
---        }
+        lua = {
+            default = {
+                {complete_items = {'lsp', 'ts', 'snippet'}},
+                -- {complete_items = {'buffer'}},
+                {mode = '<C-p>'},
+                {mode = '<C-n>'}
+            },
+            comment = {},
+            string = {
+                {complete_items = {'path'}, triggered_only = {"/"}}
+            }
+        }
     }
 end
 
