@@ -38,18 +38,18 @@ function M.setup()
     }
   }
 
-  vim.g.nvim_tree_bindings = {
-    preview = { '<C-p>', '<C-b>', '<Tab>' }
-  }
+--  vim.g.nvim_tree_bindings = {
+--    preview = { '<C-p>', '<C-b>', '<Tab>' }
+--  }
 
-  vim.api.nvim_set_keymap('n', '<C-n>', ':NvimTreeToggle<CR>', {
-      noremap = true,
-      silent = true
+    vim.api.nvim_set_keymap('n', '<C-n>', ':NvimTreeToggle<CR>', {
+        noremap = true,
+        silent = true
     })
 
-  vim.api.nvim_set_keymap('n', '<leader>r', ':NvimTreeRefresh<CR>', {
-      noremap = true,
-      silent = true
+    vim.api.nvim_set_keymap('n', '<leader>r', ':NvimTreeRefresh<CR>', {
+        noremap = true,
+        silent = true
     })
 
   vim.api.nvim_exec([[
