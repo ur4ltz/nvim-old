@@ -21,14 +21,14 @@ o.listchars     = [[tab:→ ,space:·,eol:¶,trail:·,extends:↷,precedes:↶]]
 o.clipboard     = 'unnamedplus' -- Use system clipboard
 
 o.backup        = true
-local backupdir = os.getenv('HOME') .. '/.vim/files/backup//'
-o.backupdir     = backupdir
+-- local backupdir = os.getenv('HOME') .. '/.vim/files/backup//'
+-- o.backupdir     = backupdir
 
 o.undofile      = true
 o.undolevels    = 10000
 o.undoreload    = 10000
-local undodir   = os.getenv('HOME') .. '/.vim/files/undo//'
-o.undodir       = undodir
+-- local undodir   = os.getenv('HOME') .. '/.vim/files/undo//'
+-- o.undodir       = undodir
 -- }}}
 
 -- Window options {{{

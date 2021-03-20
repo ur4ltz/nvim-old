@@ -49,30 +49,31 @@ require('packer').startup(function()
         'hoob3rt/lualine.nvim',
         requires = {'kyazdani42/nvim-web-devicons', opt = true},
         config = function()
-            local lualine = require('lualine')
-            lualine.options = {
-                theme = 'powerline',
-                icons_enabled = true,
+            require('lualine').setup{
+                options = {
+                    theme = 'powerline',
+                    -- section_separator = {'|', '|'},
+                    -- component_separators = {'|', '|'},
+                    icons_enabled = true,
+                },
+                sections = {
+                    lualine_a = {{'mode', upper = true}},
+                    lualine_b = {{'branch', icon = ''}},
+                    lualine_c = {{'filename', file_status = true}},
+                    lualine_x = {'encoding', 'fileformat', 'filetype'},
+                    lualine_y = {'progress'},
+                    lualine_z = {'location'},
+                },
+                inactive_sections = {
+                    lualine_a = {},
+                    lualine_b = {},
+                    lualine_c = {'filename'},
+                    lualine_x = {'location'},
+                    lualine_y = {},
+                    lualine_z = {}
+                },
+                extensions = {'fzf'},
             }
-            lualine.separator = '|'
-            lualine.sections = {
-                lualine_a = {'mode'},
-                lualine_b = {'branch', 'diff'},
-                lualine_c = {'filename'},
-                lualine_x = {'encoding', 'fileformat', 'filetype'},
-                lualine_y = {'progress'},
-                lualine_z = {'location'},
-            }
-            lualine.inactive_sections = {
-                lualine_a = {},
-                lualine_b = {},
-                lualine_c = {'filename'},
-                lualine_x = {'location'},
-                lualine_y = {},
-                lualine_z = {}
-            }
-            lualine.extensions = {'fzf'}
-            lualine.status()
         end
     }
 
