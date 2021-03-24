@@ -142,7 +142,8 @@ require('packer').startup(function()
     }
 
     use {
-        'liuchengxu/vista.vim'
+        'liuchengxu/vista.vim',
+        setup = require('conf.vista').setup,
     }
 
     use {
